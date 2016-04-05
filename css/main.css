@@ -1,0 +1,29 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background: #292D40;
+}
+
+.fancy-font {
+    font-family: 'Fascinate Inline', cursive;
+}
+
+#home {
+    background: url(../images/photo-1459789867050-92376a5e7fab.jpg);
+    min-height: 800px;
+    background-size: cover;
+}
+
+.navbar-inverse {
+    background-color: rgba(0, 0, 0, 0.23);
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+
+#name-tag {
+    margin-top: 250px;
+    text-shadow: 1px 1px 3px #BEE1F7;
+    color: #507186;
+}
