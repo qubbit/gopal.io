@@ -12,12 +12,12 @@ body {
 }
 
 .h1, h1 {
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 .block {
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .block:not(:first-child){
@@ -30,6 +30,7 @@ legend {
 
 .form-control, .btn {
     border-radius: 0;
+    font-size: 1.3rem;
 }
 
 form label {
