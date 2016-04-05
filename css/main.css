@@ -1,3 +1,7 @@
+html {
+    font-size: 14px;
+}
+
 body {
     font-family: 'Lato', sans-serif;
     background: #292D40;
@@ -5,6 +9,31 @@ body {
 
 .fancy-font {
     font-family: 'Fascinate Inline', cursive;
+}
+
+.h1, h1 {
+    font-size: 3rem;
+}
+
+.block {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.block:not(:first-child){
+    padding-top: 50px;
+}
+
+legend {
+    color: #eee;
+}
+
+.form-control, .btn {
+    border-radius: 0;
+}
+
+form label {
+    font-size: 1.5rem;
 }
 
 #home {
