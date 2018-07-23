@@ -1,59 +1,66 @@
 html {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    background: #292D40;
+  font-family: 'Avenir Next', 'Lato', sans-serif;
+  background: #1b1b1b;
 }
 
 .fancy-font {
-    font-family: 'Fascinate Inline', cursive;
+  font-family: 'Fascinate Inline', cursive;
 }
 
 .h1, h1 {
-    font-size: 5rem;
+  font-size: 5rem;
+  font-weight: 500;
+}
+
+.h2, h2 {
+  font-weight: 500;
 }
 
 .block {
-    color: #fff;
-    font-size: 1.5rem;
+  color: #fff;
+  font-size: 1.5rem;
 }
 
 .block:not(:first-child){
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 legend {
-    color: #eee;
+  color: #eee;
 }
 
 .form-control, .btn {
-    border-radius: 0;
-    font-size: 1.3rem;
+  border-radius: 0;
+  font-size: 1.3rem;
 }
 
 form label {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 #home {
-    background: url(../images/photo-1459789867050-92376a5e7fab.jpg);
-    min-height: 800px;
-    background-size: cover;
-}
-
-.navbar-inverse {
-    background-color: rgba(0, 0, 0, 0.23);
-    border-color: rgba(0, 0, 0, 0.23);
-}
-
-.navbar-inverse .navbar-nav>li>a {
-    color: #fff;
+  /*background: url(../images/photo-1459789867050-92376a5e7fab.jpg);*/
+  /*background-size: cover;*/
 }
 
 #name-tag {
-    margin-top: 250px;
-    text-shadow: 1px 1px 3px #0F1A21;
-    color: #FFFFFF;
+  margin-top: 250px;
+  text-shadow: 1px 1px 3px #0F1A21;
+  color: #FFFFFF;
+}
+
+.text-center {
+  text-align: center;
+}
+
+img.logo {
+  width: 128px;
+}
+
+.logo-container {
+  //background: red;
 }
