@@ -1,10 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 14px;
 }
 
 body {
   font-family: 'Avenir Next', 'Lato', sans-serif;
-  background: #1b1b1b;
+  color: #222;
+  background: #fff;
+  margin: 0;
+  padding: 0;
 }
 
 .fancy-font {
@@ -20,15 +27,6 @@ body {
   font-weight: 500;
 }
 
-.block {
-  color: #fff;
-  font-size: 1.5rem;
-}
-
-.block:not(:first-child){
-  padding-top: 50px;
-}
-
 legend {
   color: #eee;
 }
@@ -42,17 +40,6 @@ form label {
   font-size: 1.5rem;
 }
 
-#home {
-  /*background: url(../images/photo-1459789867050-92376a5e7fab.jpg);*/
-  /*background-size: cover;*/
-}
-
-#name-tag {
-  margin-top: 250px;
-  text-shadow: 1px 1px 3px #0F1A21;
-  color: #FFFFFF;
-}
-
 .text-center {
   text-align: center;
 }
@@ -61,6 +48,76 @@ img.logo {
   width: 128px;
 }
 
-.logo-container {
-  //background: red;
+/* Image gallery stuff */
+header {
+  margin-bottom: 50px;
+}
+
+#logo {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+#canvas {
+  width: 1200px;
+  margin: 0px auto;
+  padding-top: 75px;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.image-container {
+  width: 380px;
+  margin-bottom: 30px;
+  /* gallery width is 1200px. With (380 * 3)px for image containers.
+   * this creates 3 columns of image with equal spacing (30px) in between
+   * each image
+   */
+}
+
+img.image-thumb {
+  width: 100%;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+/* responsive fixes */
+@media screen and (max-width: 1260px) {
+  #canvas {
+    width: 1150px;
+  }
+  .image-container {
+    width: 360px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  #canvas {
+    width: 900px;
+  }
+
+  .image-container {
+    width: 280px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  #canvas {
+    padding: 10px;
+  }
+
+  .image-container {
+    width: 210px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
 }
