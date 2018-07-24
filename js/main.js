@@ -1,8 +1,54 @@
+'use strict';
+
 var canvas;
 var gallery;
 
 var $n = document.createElement.bind(document);
-var $q = document.getElementById.bind(document);
+var $i = document.getElementById.bind(document);
+var $qa = document.querySelectorAll.bind(document);
+var $qs = document.querySelector.bind(document);
+
+function applyStyle(selector, style) {
+  var nodes = $qa(selector);
+
+  for (var i = 0; i < nodes.length; i++) {
+    for (var prop in style) {
+      if (style.hasOwnProperty(prop)) {
+        nodes[i].style[prop] = style[prop];
+      }
+    }
+  }
+}
+
+var CANVAS_WIDTH = 1200;
+
+function getColumns(W) {
+  if (W > 900) return 3;
+  if (W < 900 && W > 400) return 2;
+  if (W <= 400) return 1;
+}
+
+function fixOnResize() {
+  var W = window.innerWidth;
+  var m = 15;
+  var columns = getColumns(W);
+
+  if (W < 1200) {
+    var i_w = W / columns - m * 3;
+    applyStyle('#canvas', {
+      width: `${W - m * 2}px`,
+      paddingLeft: `${m}px`,
+      paddingRight: `${m}px`
+    });
+    applyStyle('.image-container', { width: `${i_w}px` });
+  } else {
+    var i_w = CANVAS_WIDTH / columns - 2 * m;
+    applyStyle('#canvas', { width: `${CANVAS_WIDTH}px` });
+    applyStyle('.image-container', { width: `${i_w}px` });
+  }
+}
+
+window.onresize = fixOnResize;
 
 function buildImageThumbnail(i) {
   var container = $n('div');
@@ -22,8 +68,8 @@ function buildImageThumbnail(i) {
   return container;
 }
 window.onload = function() {
-  canvas = $q('canvas');
-  gallery = $q('gallery');
+  canvas = $i('canvas');
+  gallery = $i('gallery');
 
   // sample photoset id = 72157656845052880
   // sample ns id = 66956608@N06
@@ -47,6 +93,7 @@ window.onload = function() {
       });
     })
     .then(function() {
+      fixOnResize();
       var myLightbox = GLightbox({
         selector: 'glightbox'
       });

@@ -69,6 +69,7 @@ header {
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
 }
 
 .image-container {
@@ -86,38 +87,4 @@ img.image-thumb {
 
 footer {
   margin-top: 50px;
-}
-
-/* responsive fixes */
-@media screen and (max-width: 1260px) {
-  #canvas {
-    width: 1150px;
-  }
-  .image-container {
-    width: 360px;
-    margin-bottom: 30px;
-  }
-}
-
-@media screen and (max-width: 960px) {
-  #canvas {
-    width: 900px;
-  }
-
-  .image-container {
-    width: 280px;
-    margin-bottom: 30px;
-  }
-}
-
-@media screen and (max-width: 460px) {
-  #canvas {
-    padding: 10px;
-  }
-
-  .image-container {
-    width: 210px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
 }
