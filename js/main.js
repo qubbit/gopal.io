@@ -32,20 +32,19 @@ function fixOnResize() {
   var W = window.innerWidth;
   var m = 15;
   var columns = getColumns(W);
+  var i_w = W / columns - m * 3;
 
   if (W < 1200) {
-    var i_w = W / columns - m * 3;
     applyStyle('#canvas', {
       width: `${W - m * 2}px`,
       paddingLeft: `${m}px`,
       paddingRight: `${m}px`
     });
-    applyStyle('.image-container', { width: `${i_w}px` });
   } else {
-    var i_w = CANVAS_WIDTH / columns - 2 * m;
+    i_w = CANVAS_WIDTH / columns - 2 * m;
     applyStyle('#canvas', { width: `${CANVAS_WIDTH}px` });
-    applyStyle('.image-container', { width: `${i_w}px` });
   }
+  applyStyle('.image-container', { width: `${i_w}px` });
 }
 
 window.onresize = fixOnResize;
@@ -57,6 +56,7 @@ function buildImageThumbnail(i) {
   var anchor = $n('a');
   anchor.href = i.url_l;
   anchor.classList.add('glightbox');
+  anchor.dataset['description'] = i.description._content;
 
   var img = $n('img');
   img.classList.add('image-thumb');
@@ -71,22 +71,25 @@ window.onload = function() {
   canvas = $i('canvas');
   gallery = $i('gallery');
 
-  // sample photoset id = 72157656845052880
-  // sample ns id = 66956608@N06
-  // my photoset id = 72157627479811709
-  // my ns id = 66601325@N05
-
   fetch(
-    'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&name=value&api_key=53259c75c76adda4e869ecac9a069d94&user_id=66956608@N06&continuation=0&short_limit=1&photoset_id=72157656845052880&extras=url_l,url_m&format=json&nojsoncallback=1'
+    'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&name=value&api_key=53259c75c76adda4e869ecac9a069d94&user_id=66601325@N05&continuation=0&short_limit=1&photoset_id=72157671514742408&extras=description,date_taken,url_l,url_m&format=json&nojsoncallback=1'
   )
     .then(response => response.json())
     .then(function(body) {
-      var photoset = body.photoset;
-      var title = $n('h2');
-      title.innerText = photoset.title;
-      canvas.insertBefore(title, gallery);
+      var ps = body.photoset;
 
-      var photos = photoset.photo;
+      var flickrAlbumUrl = `https://www.flickr.com/photos/${ps.owner}/sets/${
+        ps.id
+      }`;
+
+      var albumHeader = $n('div');
+      albumHeader.classList.add('album-header');
+      albumHeader.innerHTML = `<h2>${
+        ps.title
+      }</h2><span><a class='link' href='${flickrAlbumUrl}'>View on Flickr</a></span>`;
+      canvas.insertBefore(albumHeader, gallery);
+
+      var photos = ps.photo;
       photos.forEach(function(p) {
         var imageElement = buildImageThumbnail(p);
         gallery.appendChild(imageElement);

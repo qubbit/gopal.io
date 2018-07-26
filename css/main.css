@@ -2,6 +2,18 @@
   box-sizing: border-box;
 }
 
+a {
+  color: #457B9D;
+}
+
+a.link {
+  color: #ffffff;
+  background: #457B9D;
+  padding: 7px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 html {
   font-size: 14px;
 }
@@ -53,6 +65,12 @@ header {
   margin-bottom: 50px;
 }
 
+.album-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 #logo {
   font-size: 1.7rem;
   font-weight: 600;
@@ -87,4 +105,13 @@ img.image-thumb {
 
 footer {
   margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+/* glightbox overrides */
+.glightbox-clean .gslide-desc {
+  font-size: unset;
+  margin-bottom: 0;
+  font-family: unset;
+  line-height: 1.4rem;
 }
