@@ -2,6 +2,7 @@
 
 var canvas;
 var gallery;
+var spinner;
 
 var $n = document.createElement.bind(document);
 var $i = document.getElementById.bind(document);
@@ -70,14 +71,16 @@ function buildImageThumbnail(i) {
 window.onload = function() {
   canvas = $i('canvas');
   gallery = $i('gallery');
+  spinner = $i('spinner');
 
   fetch(
     'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&name=value&api_key=53259c75c76adda4e869ecac9a069d94&user_id=66601325@N05&continuation=0&short_limit=1&photoset_id=72157671514742408&extras=description,date_taken,url_l,url_m&format=json&nojsoncallback=1'
   )
     .then(response => response.json())
     .then(function(body) {
-      var ps = body.photoset;
+      spinner.style.display = 'none';
 
+      var ps = body.photoset;
       var flickrAlbumUrl = `https://www.flickr.com/photos/${ps.owner}/sets/${
         ps.id
       }`;
