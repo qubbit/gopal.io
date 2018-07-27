@@ -3,7 +3,7 @@
 }
 
 a {
-  color: #457B9D;
+  color: #457b9d;
 }
 
 a.link {
@@ -31,12 +31,18 @@ body {
   font-family: 'Fascinate Inline', cursive;
 }
 
-.h1, h1 {
-  font-size: 5rem;
+.h1,
+h1 {
+  font-size: 1.7rem;
   font-weight: 500;
 }
 
-.h2, h2 {
+.first-name {
+  color: #a5b8ca;
+}
+
+.h2,
+h2 {
   font-weight: 500;
 }
 
@@ -44,7 +50,8 @@ legend {
   color: #eee;
 }
 
-.form-control, .btn {
+.form-control,
+.btn {
   border-radius: 0;
   font-size: 1.3rem;
 }
@@ -57,13 +64,13 @@ form label {
   text-align: center;
 }
 
-img.logo {
-  width: 128px;
-}
-
 /* Image gallery stuff */
 header {
   margin-bottom: 50px;
+}
+
+header a {
+  text-decoration: none;
 }
 
 .album-header {
@@ -78,23 +85,45 @@ header {
 }
 
 #canvas {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0px auto;
   padding: 75px 15px;
 }
 
-#gallery {
+#album {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   justify-content: space-between;
+  align-items: center;
+}
+
+.album-link {
+  text-decoration: none;
+}
+
+.album-link:not(:last-child) {
+  margin-right: 40px;
+}
+
+.album-link > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.4rem;
+  text-shadow: 0px 0px 2px #383535;
+}
+
+#albums {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
 }
 
 .image-container {
   width: 380px;
   margin-bottom: 30px;
-  /* gallery width is 1200px. With (380 * 3)px for image containers.
+  /* album width is 1200px. With (380 * 3)px for image containers.
    * this creates 3 columns of image with equal spacing (30px) in between
    * each image
    */
@@ -130,52 +159,67 @@ footer {
   background-color: #333;
   float: left;
   -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
-          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
 }
 .sk-cube-grid .sk-cube1 {
   -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s; }
+  animation-delay: 0.2s;
+}
 .sk-cube-grid .sk-cube2 {
   -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s; }
+  animation-delay: 0.3s;
+}
 .sk-cube-grid .sk-cube3 {
   -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s; }
+  animation-delay: 0.4s;
+}
 .sk-cube-grid .sk-cube4 {
   -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s; }
+  animation-delay: 0.1s;
+}
 .sk-cube-grid .sk-cube5 {
   -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s; }
+  animation-delay: 0.2s;
+}
 .sk-cube-grid .sk-cube6 {
   -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s; }
+  animation-delay: 0.3s;
+}
 .sk-cube-grid .sk-cube7 {
   -webkit-animation-delay: 0s;
-          animation-delay: 0s; }
+  animation-delay: 0s;
+}
 .sk-cube-grid .sk-cube8 {
   -webkit-animation-delay: 0.1s;
-          animation-delay: 0.1s; }
+  animation-delay: 0.1s;
+}
 .sk-cube-grid .sk-cube9 {
   -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s; }
+  animation-delay: 0.2s;
+}
 
 @-webkit-keyframes sk-cubeGridScaleDelay {
-  0%, 70%, 100% {
+  0%,
+  70%,
+  100% {
     -webkit-transform: scale3D(1, 1, 1);
-            transform: scale3D(1, 1, 1);
-  } 35% {
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
     -webkit-transform: scale3D(0, 0, 1);
-            transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
   }
 }
 
 @keyframes sk-cubeGridScaleDelay {
-  0%, 70%, 100% {
+  0%,
+  70%,
+  100% {
     -webkit-transform: scale3D(1, 1, 1);
-            transform: scale3D(1, 1, 1);
-  } 35% {
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
     -webkit-transform: scale3D(0, 0, 1);
-            transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
   }
 }

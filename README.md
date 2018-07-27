@@ -1,2 +1,4 @@
-# gopal.io
-Personal website
+gopal.io
+========
+
+Personal website. Built using React ⚛
