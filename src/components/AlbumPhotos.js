@@ -54,11 +54,14 @@ class AlbumPhotos extends Component {
     if (loading) {
       return <Loader />;
     }
+    var flickrAlbumUrl = `https://www.flickr.com/photos/${album.owner}/sets/${
+      album.id
+    }`;
 
     var ps = photos.map(p => ({
       caption: p.description._content,
-      width: p.width_m,
-      height: p.height_m,
+      width: parseInt(p.width_m, 10),
+      height: parseInt(p.height_m, 10),
       src: p.url_m,
       srcSet: [
         `${p.url_m} ${p.width_m}w`,
@@ -73,7 +76,8 @@ class AlbumPhotos extends Component {
         bounds
         onResize={contentRect =>
           this.setState({ width: contentRect.bounds.width })
-        }>
+        }
+      >
         {({ measureRef }) => {
           if (width < 1) {
             return <div ref={measureRef} />;
@@ -90,7 +94,12 @@ class AlbumPhotos extends Component {
           }
           return (
             <div ref={measureRef}>
-              <div className='album-title'><h2>{album.title}</h2></div>
+              <div className="album-title">
+                <h2>{album.title}</h2>
+                <a className="link" href={flickrAlbumUrl}>
+                  View on Flickr
+                </a>
+              </div>
               <Gallery
                 photos={ps}
                 columns={columns}

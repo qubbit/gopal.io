@@ -18,9 +18,7 @@ class App extends Component {
         </header>
         <Route path="/" component={Albums} exact />
         <Route path="/albums/:id" component={AlbumPhotos} exact />
-        <footer>
-          &copy; Gopal Adhikari 2018. Photos powered by Flickr
-        </footer>
+        <footer>&copy; Gopal Adhikari 2018. Photos powered by Flickr</footer>
       </div>
     );
   }

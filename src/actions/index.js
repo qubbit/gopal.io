@@ -17,7 +17,7 @@ export function fetchAlbumPhotos(params = {}) {
   params = {
     ...params,
     method: 'flickr.photosets.getPhotos',
-    extras: 'description,date_taken,url_m,url_c,url_l,url_h,url_o',
+    extras: 'description,date_taken,url_m,url_c,url_l,url_h,url_o'
   };
 
   return dispatch => {

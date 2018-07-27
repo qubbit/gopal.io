@@ -30,7 +30,8 @@ class Albums extends Component {
                   backgroundImage: `url(${albumCover})`,
                   height: '200px',
                   width: '300px'
-                }}>
+                }}
+              >
                 <h1>{a.title._content}</h1>
               </div>
             </Link>

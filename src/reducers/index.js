@@ -4,7 +4,7 @@ import photos from './photos';
 
 const appReducer = combineReducers({
   albums,
-  photos,
+  photos
 });
 
 export default function(state, action) {

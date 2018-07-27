@@ -3,14 +3,14 @@ const DEFAULT_PARAMS = {
   api_key: '53259c75c76adda4e869ecac9a069d94',
   user_id: '66601325@N05',
   format: 'json',
-  nojsoncallback: 1,
+  nojsoncallback: 1
 };
 
 // photoset_id=72157671514742408
 
 function headers() {
   return {
-    Accept: 'application/json',
+    Accept: 'application/json'
   };
 }
 
@@ -35,7 +35,7 @@ export default {
     params = { ...DEFAULT_PARAMS, ...params };
     return fetch(`${FLICKR_API_URL}${url}${queryString(params)}`, {
       method: 'GET',
-      headers: headers(),
+      headers: headers()
     }).then(parseResponse);
-  },
+  }
 };

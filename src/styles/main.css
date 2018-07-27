@@ -3,12 +3,12 @@
 }
 
 a {
-  color: #457b9d;
+  color: #222;
 }
 
 a.link {
   color: #ffffff;
-  background: #222;
+  background: #2196F3;
   padding: 3px 5px;
   font-size: 0.75rem;
   text-decoration: none;
@@ -38,7 +38,8 @@ h1 {
 }
 
 .first-name {
-  color: #a5b8ca;
+  color: #2196F3;
+  font-weight: 300;
 }
 
 .h2,
@@ -73,10 +74,10 @@ header a {
   text-decoration: none;
 }
 
-.album-header {
+.album-title {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 #logo {

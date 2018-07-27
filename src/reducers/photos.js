@@ -3,7 +3,7 @@ import * as TYPES from '../actions/types';
 const initialState = {
   photos: [],
   album: {},
-  loading: true,
+  loading: true
 };
 
 export default function(state = initialState, action) {
