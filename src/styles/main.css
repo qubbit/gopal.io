@@ -2,17 +2,36 @@
   box-sizing: border-box;
 }
 
-a {
-  color: #222;
+.light {
+  --text-color: #222;
+  --bg-color: #fff;
+  --accent-color: #2196f3;
 }
 
-a.link {
-  color: #ffffff;
-  background: #2196F3;
+.dark {
+  --text-color: #fff;
+  --bg-color: #222831;
+  --accent-color: #efbb35;
+}
+
+a {
+  color: var(--text-color);
+}
+
+a.link,
+button {
+  color: var(--accent-color);
   padding: 3px 5px;
   font-size: 0.75rem;
   text-decoration: none;
   text-transform: uppercase;
+  cursor: pointer;
+  border: 0 none;
+  background: transparent;
+}
+
+:focus {
+  outline: none;
 }
 
 html {
@@ -21,10 +40,13 @@ html {
 
 body {
   font-family: 'Avenir Next', 'Lato', sans-serif;
-  color: #222;
-  background: #fff;
   margin: 0;
   padding: 0;
+}
+
+#main {
+  color: var(--text-color);
+  background: var(--bg-color);
 }
 
 .fancy-font {
@@ -38,17 +60,13 @@ h1 {
 }
 
 .first-name {
-  color: #2196F3;
+  color: var(--accent-color);
   font-weight: 300;
 }
 
 .h2,
 h2 {
   font-weight: 500;
-}
-
-legend {
-  color: #eee;
 }
 
 .form-control,
@@ -65,8 +83,10 @@ form label {
   text-align: center;
 }
 
-/* Image gallery stuff */
 header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 50px;
 }
 
@@ -110,7 +130,7 @@ header a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: var(--bg-color);
   font-size: 2.4rem;
   text-shadow: 0px 0px 2px #383535;
 }
@@ -121,30 +141,9 @@ header a {
   align-items: center;
 }
 
-.image-container {
-  width: 380px;
-  margin-bottom: 30px;
-  /* album width is 1200px. With (380 * 3)px for image containers.
-   * this creates 3 columns of image with equal spacing (30px) in between
-   * each image
-   */
-}
-
-img.image-thumb {
-  width: 100%;
-}
-
 footer {
   margin-top: 50px;
   margin-bottom: 50px;
-}
-
-/* Glightbox overrides */
-.glightbox-clean .gslide-desc {
-  font-size: unset;
-  margin-bottom: 0;
-  font-family: unset;
-  line-height: 1.4rem;
 }
 
 /* Spinner */
