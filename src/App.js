@@ -7,11 +7,16 @@ import { Route } from 'react-router-dom';
 class App extends Component {
   changeTheme(theme) {
     this.mainRef.classList = [theme];
+    localStorage.setItem('theme', theme);
   }
 
   render() {
     return (
-      <div id="main" className="light" ref={ref => (this.mainRef = ref)}>
+      <div
+        id="main"
+        className={localStorage.getItem('theme') || 'light'}
+        ref={ref => (this.mainRef = ref)}
+      >
         <div id="canvas">
           <header>
             <div className="masthead">

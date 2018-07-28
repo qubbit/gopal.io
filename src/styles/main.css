@@ -47,6 +47,12 @@ body {
 #main {
   color: var(--text-color);
   background: var(--bg-color);
+  transition: background ease-in 0.2s;
+}
+
+html, body, #root, #main {
+  height: 100%;
+  overflow: auto;
 }
 
 .fancy-font {
@@ -130,7 +136,7 @@ header a {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--bg-color);
+  color: #fff;
   font-size: 2.4rem;
   text-shadow: 0px 0px 2px #383535;
 }
