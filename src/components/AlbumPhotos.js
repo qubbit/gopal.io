@@ -94,6 +94,9 @@ class AlbumPhotos extends Component {
           }
           return (
             <div ref={measureRef}>
+              <button onClick={() => this.props.history.goBack()}>
+                ← Back
+              </button>
               <div className="album-title">
                 <h2>{album.title}</h2>
                 <a className="link" href={flickrAlbumUrl}>
