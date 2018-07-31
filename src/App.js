@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Albums from './components/Albums';
 import AlbumPhotos from './components/AlbumPhotos';
+import Logo from './components/Logo';
 import './styles/main.css';
 import { Route } from 'react-router-dom';
 
@@ -25,11 +26,17 @@ class App extends Component {
           <header>
             <div className="masthead">
               <a className="home-link" href="/">
-                <h1 id="logo">
-                  <span className="first-name">Gopal</span> Adhikari
-                </h1>
+                <div className="monogram-container">
+                  <Logo />
+                </div>
+                <div>
+                  <h1 id="name">
+                    <span className="first-name">Gopal</span>
+                    <span className="last-name">Adhikari</span>
+                  </h1>
+                  <small>Software Developer | Not A Photographer</small>
+                </div>
               </a>
-              <small>Software Developer | Not A Photographer</small>
             </div>
           </header>
           <Route path="/" component={Albums} exact />

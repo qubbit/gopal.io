@@ -61,9 +61,10 @@ h1 {
   font-weight: 500;
 }
 
-.first-name {
+.last-name {
   color: var(--accent-color);
   font-weight: lighter;
+  margin-left: 10px;
 }
 
 .h2,
@@ -97,13 +98,27 @@ header a {
 }
 
 .home-link {
-  display: block;
+  display: flex;
+  align-items: center;
 }
 
-#logo {
-  font-size: 1.7rem;
+.home-link .monogram-container {
+  width: 64px;
+  margin-right: 16px;
+}
+
+
+.home-link .monogram-container svg {
+  overflow: visible;
+  stroke-width: 10px;
+  stroke: var(--accent-color);
+  fill: transparent;
+}
+
+#name {
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 #canvas {
