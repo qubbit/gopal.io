@@ -89,6 +89,10 @@ form label {
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -106,9 +110,14 @@ header a {
   align-items: center;
 }
 
+.home-link {
+  display: block;
+}
+
 #logo {
   font-size: 1.7rem;
   font-weight: 600;
+  margin-bottom: 0;
 }
 
 #canvas {

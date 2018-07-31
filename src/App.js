@@ -17,19 +17,19 @@ class App extends Component {
         className={localStorage.getItem('theme') || 'light'}
         ref={ref => (this.mainRef = ref)}
       >
+        <div className="text-right theme-changer">
+          <button onClick={() => this.changeTheme('light')}>Light</button>
+          <button onClick={() => this.changeTheme('dark')}>Dark</button>
+        </div>
         <div id="canvas">
           <header>
             <div className="masthead">
-              <a href="/">
-                <h1 logo="logo">
+              <a className="home-link" href="/">
+                <h1 id="logo">
                   <span className="first-name">Gopal</span> Adhikari
                 </h1>
               </a>
               <small>Software Developer | Not A Photographer</small>
-            </div>
-            <div className="theme-changer">
-              <button onClick={() => this.changeTheme('light')}>Light</button>
-              <button onClick={() => this.changeTheme('dark')}>Dark</button>
             </div>
           </header>
           <Route path="/" component={Albums} exact />
