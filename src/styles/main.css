@@ -44,19 +44,15 @@ body {
   padding: 0;
 }
 
-#main {
-  color: var(--text-color);
-  background: var(--bg-color);
-  transition: background ease-in 0.2s;
-}
-
 html, body, #root, #main {
   height: 100%;
   overflow: auto;
 }
 
-.fancy-font {
-  font-family: 'Fascinate Inline', cursive;
+#main {
+  color: var(--text-color);
+  background: var(--bg-color);
+  transition: background ease-in 0.2s;
 }
 
 .h1,
@@ -67,22 +63,12 @@ h1 {
 
 .first-name {
   color: var(--accent-color);
-  font-weight: 300;
+  font-weight: lighter;
 }
 
 .h2,
 h2 {
   font-weight: 500;
-}
-
-.form-control,
-.btn {
-  border-radius: 0;
-  font-size: 1.3rem;
-}
-
-form label {
-  font-size: 1.5rem;
 }
 
 .text-center {
