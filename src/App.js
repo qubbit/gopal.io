@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Albums from './components/Albums';
 import AlbumPhotos from './components/AlbumPhotos';
-import Logo from './components/Logo';
+import LogoAlt from './components/LogoAlt';
 import './styles/main.css';
 import { Route } from 'react-router-dom';
 
@@ -26,9 +26,7 @@ class App extends Component {
           <header>
             <div className="masthead">
               <a className="home-link" href="/">
-                <div className="monogram-container">
-                  <Logo />
-                </div>
+                {/* <div className="monogram-container"> <LogoAlt /> </div> */}
                 <div>
                   <h1 id="name">
                     <span className="first-name">Gopal</span>

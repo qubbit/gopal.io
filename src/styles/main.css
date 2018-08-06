@@ -102,13 +102,13 @@ header a {
   align-items: center;
 }
 
-.home-link .monogram-container {
+.monogram-container {
   width: 64px;
   margin-right: 16px;
 }
 
 
-.home-link .monogram-container svg {
+.monogram-container svg {
   overflow: visible;
   stroke-width: 10px;
   stroke: var(--accent-color);
@@ -237,5 +237,25 @@ footer {
   35% {
     -webkit-transform: scale3D(0, 0, 1);
     transform: scale3D(0, 0, 1);
+  }
+}
+
+
+@media screen and (max-width: 670px) {
+  header {
+    justify-content: center;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  #albums {
+    justify-content: center;
+  }
+
+  .album-link:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 40px;
   }
 }
